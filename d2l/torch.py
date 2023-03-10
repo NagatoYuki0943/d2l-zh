@@ -1394,7 +1394,7 @@ def train_2d(trainer, steps=20, f_grad=None):
             x1, x2, s1, s2 = trainer(x1, x2, s1, s2, f_grad)
         else:
             x1, x2, s1, s2 = trainer(x1, x2, s1, s2)
-        results.append((x1, x2))
+        results.append((float(x1), float(x2)))  # fix seg.ipynb d2l.show_trace_2d error
     print(f'epoch {i + 1}, x1: {float(x1):f}, x2: {float(x2):f}')
     return results
 
